@@ -3,72 +3,22 @@
   
   tasks:
    
-  - name: Create bswaminathan account
+  - name: Create username 3 account
     user:
-     name=bswaminathan
-     comment="bswaminathan"
+     name=username3
+     comment=
      group=ba
      createhome=yes
-     home=/home/bswaminathan
+     home=/home/username3
      shell=/bin/bash
      state=present
 
-  - name: Create mgoodfellow account
+  - name: Create username 4 account
     user:
-     name=mgoodfellow
-     comment="mgoodfellow"
+     name=username4
+     comment=
      group=ba
      createhome=yes
-     home=/home/mgoodfellow
-     shell=/bin/bash
-     state=present
-
-  - name: Create bhoward account
-    user:
-     name=bhoward
-     comment="bhoward"
-     group=ba
-     createhome=yes
-     home=/home/bhoward
-     shell=/bin/bash
-     state=present
-
-  - name: Create gurias account
-    user:
-     name=gurias
-     comment="gurias"
-     group=ba
-     createhome=yes
-     home=/home/gurias
-     shell=/bin/bash
-     state=present
-
-  - name: Create gpage account
-    user:
-     name=gpage
-     comment="gpage"
-     group=ba
-     createhome=yes
-     home=/home/gpage
-     shell=/bin/bash
-     state=present
-
-  - name: Create jestapa account
-    user:
-     name=jestapa
-     comment="jestapa"
-     group=ba
-     createhome=yes
-     home=/home/jestapa
-     shell=/bin/bash
-     state=present
-
-  - name: Create kmcdonnell account
-    user:
-     name=kmcdonnell
-     comment="kmcdonnell"
-     group=ba
-     createhome=yes
-     home=/home/kmcdonnell
+     home=/home/username4
      shell=/bin/bash
      state=present
