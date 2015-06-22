@@ -1,0 +1,4 @@
+---
+- include: admin_users.yml
+- include: bash.yml
+- include: ssh.yml

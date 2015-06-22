@@ -1,0 +1,7 @@
+---
+- include: groups.yml
+- include: admin_users.yml
+- include: sudo.yml
+- include: users.yml
+- include: bash.yml
+- include: ssh.yml

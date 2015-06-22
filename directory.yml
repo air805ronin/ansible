@@ -1,0 +1,71 @@
+---
+- hosts: Application Servers
+  sudo: True
+  user: root
+
+  tasks:
+
+  - file: path=/u01/ state=directory owner=oracle mode=755
+  - file: path=/u01/otmapp/ state=directory owner=oracle mode=755
+  - file: path=/u01/otmapp/logs state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/otmapp/glog state=directory owner=oracle mode=755
+  - file: path=/u01/otmapp/glog/config state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/otmapp/glog/integration state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/otmapp/glog/gc3webapp/ state=directory owner=oracle mode=755
+  - file: path=/u01/otmapp/install/ state=directory owner=oracle mode=755
+  - file: path=/u01/otmapp/web/ state=directory owner=oracle mode=755
+
+- hosts: otmftidev02.corp.ruan.com
+  sudo: True
+  user: root
+
+  tasks:
+  
+  - file: path=/u01/ state=directory owner=oracle mode=755
+  - file: path=/u01/devobi state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances/instance1 state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances/instance1/bin state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/devobi/instances/instance1/bifoundation state=directory owner=oracle mode=755  
+  - file: path=/u01/devobi/instances/instance1/bifoundation/OracleBIServerComponent state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances/instance1/bifoundation/OracleBIServerComponent/coreapplication_obis1 state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances/instance1/bifoundation/OracleBIServerComponent/coreapplication_obis1/cache state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/devobi/instances/instance1/bifoundation/OracleBIServerComponent/coreapplication_obis1/repository/ state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/devobi/instances/instance1/config state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances/instance1/config/OracleBIServerComponent state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances/instance1/config/OracleBIServerComponent/coreapplication_obis1 state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances/instance1/diagnostics state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances/instance1/diagnostics/logs state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances/instance1/diagnostics/logs/OracleBIServerComponent state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/instances/instance1/diagnostics/logs/OracleBIServerComponent/coreapplication_obis1 state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/Oracle_BI1 state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/Oracle_BI1/bifoundation state=directory owner=oracle mode=755
+
+  - file: path=/u01/devobi/Oracle_BI1/bifoundation/server state=directory owner=oracle mode=755
+  - file: path=/u01/devobi/Oracle_BI1/bifoundation/server/bin state=directory owner=oracle mode=755 recurse=yes  
+
+- hosts: Web Servers
+  sudo: True
+  user: root
+
+  tasks:
+
+  - file: path=/u01/ state=directory owner=oracle mode=755
+  - file: path=/u01/otmweb state=directory owner=oracle mode=755
+  - file: path=/u01/otmweb/logs state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/otmweb/glog state=directory owner=oracle mode=755
+  - file: path=/u01/otmweb/glog/config state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/otmweb/glog/gc3webapp/ state=directory owner=oracle mode=755
+  - file: path=/u01/otmweb/glog/integration state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/otmweb/glog/gc3webapp/ state=directory owner=oracle mode=755
+  - file: path=/u01/otmweb/glog/gc3webapp/WEB-INF state=directory owner=oracle mode=755
+  - file: path=/u01/otmweb/glog/gc3webapp/WEB-INF/xsl state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/otmweb/glog/gc3webapp/html state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/otmweb/install/ state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/otmweb/web/ state=directory owner=oracle mode=755
+  - file: path=/u01/otmweb/web/htdocs state=directory owner=oracle mode=755
+  - file: path=/u01/otmweb/web/htdocs/images state=directory owner=oracle mode=755
+  - file: path=/u01/otmweb/web/htdocs/images/custom/ state=directory owner=oracle mode=755 recurse=yes
+  - file: path=/u01/otmweb/web/htdocs/images/themes state=directory owner=oracle mode=755
+  - file: path=/u01/otmweb/web/htdocs/images/themes/themesswanblue/ state=directory owner=oracle mode=755 recurse=yes
+

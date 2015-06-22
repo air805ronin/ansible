@@ -1,0 +1,7 @@
+---
+- hosts: otmappdev01.corp.ruan.com
+  sudo: True
+
+  tasks:
+
+  - action: file state=directory path=/etc/test_dir owner=bmckenna group=admin mode=0744
