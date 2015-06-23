@@ -1,7 +1,7 @@
 ---
 - hosts: all
   sudo: True
-  user: root
+  user: deploy 
 
   tasks:
 
@@ -13,33 +13,4 @@
   - copy: src=ssh/deploy/id_rsa dest=/home/deploy/.ssh/id_rsa owner=deploy group=admin mode=0600
  
   - copy: src=ssh/deploy/id_rsa.pub dest=/home/deploy/.ssh/id_rsa.pub owner=deploy group=admin mode=0640
-
-
-  - name: Add ssh keys and authorized user for bmckenna user
-    file: state=directory path=/home/bmckenna/.ssh/ owner=bmckenna group=admin mode=700
-
-  - copy: src=ssh/bmckenna/authorized_keys dest=/home/bmckenna/.ssh/authorized_keys owner=bmckenna group=admin mode=0640
-
-  - copy: src=ssh/bmckenna/id_rsa dest=/home/bmckenna/.ssh/id_rsa owner=bmckenna group=admin mode=0600
-
-  - copy: src=ssh/bmckenna/id_rsa.pub dest=/home/bmckenna/.ssh/id_rsa.pub owner=bmckenna group=admin mode=0640
-
-  - name: Add ssh keys and authorized user for mhartman user
-    file: state=directory path=/home/mhartman/.ssh/ owner=mhartman group=admin mode=700
-
-  - copy: src=ssh/mhartman/authorized_keys dest=/home/mhartman/.ssh/authorized_keys owner=mhartman group=admin mode=0640
-
-  - copy: src=ssh/mhartman/id_rsa dest=/home/mhartman/.ssh/id_rsa owner=mhartman group=admin mode=0600
-
-  - copy: src=ssh/mhartman/id_rsa.pub dest=/home/mhartman/.ssh/id_rsa.pub owner=mhartman group=admin mode=0640
-
-
-  - name: Add ssh keys and authorized user for twalton user
-    file: state=directory path=/home/twalton/.ssh/ owner=twalton group=admin mode=700
-
-  - copy: src=ssh/twalton/authorized_keys dest=/home/twalton/.ssh/authorized_keys owner=twalton group=admin mode=0640
-
-  - copy: src=ssh/twalton/id_rsa dest=/home/twalton/.ssh/id_rsa owner=twalton group=admin mode=0600
-
-  - copy: src=ssh/twalton/id_rsa.pub dest=/home/twalton/.ssh/id_rsa.pub owner=twalton group=admin mode=0640
 

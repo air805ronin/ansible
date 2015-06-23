@@ -1,16 +1,16 @@
 ---
-- hosts: oradev01.corp.ruan.com
+- hosts: oradev01
   sudo: True
-  user: root
+  user: deploy
 
   tasks:
 
   - action: template src=tns/tnsnames.dev dest=/u01/otmdb/oracle/product/11.2.0.4/network/admin/tnsnames.ora
   - file: path=/u01/otmdb/oracle/product/11.2.0.4/network/admin/tnsnames.ora owner=oracle group=oracle
 
-- hosts: otmftidev01.corp.ruan.com
+- hosts: otmftidev01
   sudo: True
-  user: root
+  user: deploy
 
   tasks:
 

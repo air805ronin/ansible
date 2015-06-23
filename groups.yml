@@ -19,7 +19,3 @@
 
    - name: add admin group
      group: name=admin state=present gid=506
-
-   - name: remove bhoward group
-     group: name=bhoward state=absent
-
