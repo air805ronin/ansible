@@ -1,0 +1,9 @@
+---
+
+- name: install the 'Development tools' package group
+  yum: name="@Development tools" state=present
+
+- name: install the latest version of Fail2Ban
+  yum: name=fail2ban state=latest
+
+

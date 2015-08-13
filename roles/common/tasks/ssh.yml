@@ -1,0 +1,3 @@
+---
+- name: Make sure OpenSSH is at latest release
+  yum: pkg=openssh state=latest
