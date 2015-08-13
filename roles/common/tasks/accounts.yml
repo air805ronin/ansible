@@ -1,0 +1,6 @@
+---
+- name: Make sure Admin group is present
+  group: name=admin state=present
+
+- name: Make sure bmckenna user is present
+  user: name=bmckenna shell=/bin/bash groups=admin

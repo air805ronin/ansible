@@ -1,3 +1,8 @@
 ---
 - name: Make sure OpenSSH is at latest release
   yum: pkg=openssh state=latest
+- name: write SSH config file
+  template: src=sshd_config.j2 dest=/etc/ssh/sshd_config
+  notify:
+  - restart sshd
+
