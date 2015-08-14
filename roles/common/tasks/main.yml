@@ -2,3 +2,4 @@
 - include: ntp.yml
 - include: accounts.yml
 - include: ssh.yml
+- include: sudo.yml

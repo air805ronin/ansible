@@ -4,3 +4,12 @@
   roles:
      - common
      - desktop
+
+  tasks:
+
+     - mail:
+        host='localhost'
+        port=25
+        to="Benjamin McKenna <benjamin.mckenna@meredith.com>"
+        subject='Ansible-report'
+        body='System {{ ansible_hostname }} has been successfully provisioned.'
