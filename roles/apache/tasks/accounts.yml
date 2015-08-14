@@ -1,0 +1,9 @@
+---
+- name: Make sure apache group is present
+  group: name=apache state=present
+
+- name: Make sure apache user is present
+  user: name=apache shell=/bin/bash groups=apache state=present
+
+
+

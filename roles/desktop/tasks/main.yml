@@ -1,5 +1,2 @@
 ---
-
-
  - include: packages.yml
- - include: apache.yml

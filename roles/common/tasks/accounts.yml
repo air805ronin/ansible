@@ -5,9 +5,3 @@
 - name: Make sure bmckenna user is present
   user: name=bmckenna shell=/bin/bash groups=admin
 
-- name: Make sure Apache group is present
-  group: name=apache state=present
-
-- name: Make sure apache user is present
-  user: name=apache shell=/bin/bash groups=apache
-
