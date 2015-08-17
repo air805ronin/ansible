@@ -1,0 +1,15 @@
+---
+- name: Install packages for Maria db
+  yum: name=mariadb-server state=latest update_cache=yes
+
+- name: Install python module
+  yum: name=python-mysqldb state=installed
+
+- name: Create replication account
+  mysql_user: name=repl host="%" password=lper priv=*.*:"REPLICATION SLAVE" state=present
+
+- name: Create readwrite user
+  mysql_user: name=rwuser host="%" password=adminpwd priv=*.*:SELECT,INSERT,UPDATE,DELETE,CREATE,DROP state=present
+
+- name: Modify configuration file to listen on all interfaces
+  lineinfile: dest=/etc/mysql/my.cnf regexp="^bind-address" line="bind-address=0.0.0.0"

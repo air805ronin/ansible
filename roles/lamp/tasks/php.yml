@@ -1,0 +1,12 @@
+---
+- name: install PHP packages
+  apt: name={{ item }} update_cache=yes state=latest
+  with_items:
+    - php
+    - php5-mysql
+    - php5-pdo
+    - php5-gd
+    - php5-mdstring
+
+- name: copy across a template for the php.info() page
+  template: src=info.j2 dest=/var/www/html/info.php
