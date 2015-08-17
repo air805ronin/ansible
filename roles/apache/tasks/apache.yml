@@ -17,6 +17,10 @@
 #  command: sudo firewall-cmd --reload
 #  when: iptables_rule.stdout.find('http') != -1
   
+
+- name: write an emtpy apache welcome file, get rid of test page
+  template: src=welcome.j2 dest=/etc/httpd/conf.d/welcome.conf
+
 - name: write the apache config file
   template: src=httpd.j2 dest=/etc/httpd/conf/httpd.conf
   notify:
