@@ -4,6 +4,8 @@
   yum: name="@Development tools" state=present
 
 - name: install the latest version of Fail2Ban
-  yum: name=fail2ban state=latest
+  yum: name=fail2ban state=present
 
+- name: install the latest version of CMake
+  yum: name=cmake state=present
 
