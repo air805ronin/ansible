@@ -1,10 +1,9 @@
-Examples, as I learn, of the proper use for Ansible.
-goals:
+Ansible Roles I've messed around with
+
 - roles
   - common
   - desktop
-  - apache
+  - lamp (mariadb)
+  - snmp trap
   - template
-- variable usage
-- proper templating
-- maximum reusability
+
