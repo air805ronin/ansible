@@ -12,18 +12,6 @@
 - name: install net-snmp-libs
   yum: name=net-snmp-libs state=present
 
-- name: install net-snmp-perl
-  yum: name=net-snmp-perl state=present
- 
-- name: install net-snmp-devel
-  yum: name=net-snmp-devel state=present
-
-- name: install perl-Net-SNMP
-  yum: name=perl-Net-SNMP state=present
-
-- name: install perl5 
-  yum: name=perl state=present
-
 - name: install Config::Ini perl module
   yum: name=perl-Config-IniFiles state=present
 
