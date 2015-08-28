@@ -1,0 +1,29 @@
+---
+
+- name: template snmptrap.conf to server
+  template: src=snmptrap.j2 dest=/etc/snmp/snmptrap.conf backup=yes owner=root group=root mode=600
+
+- name: template snmptt.ini to server
+  template: src=snmptt.j2 dest=/etc/snmp/snmptt.ini owner=snmptt group=snmptt mode=644
+
+- name: template snmptt.conf to server
+  template: src=snmptt.conf.j2 dest=/etc/snmp/snmptt.conf owner=snmptt group=snmptt mode=644
+
+- name: copy snmptt executable to server
+  copy: src=snmptt dest=/usr/sbin/snmptt owner=root group=root mode=755
+
+- name: copy snmptthandler executable to server
+  copy: src=snmptthandler dest=/usr/sbin/snmptthandler owner=root group=root mode=755
+
+- name: copy snmpttconvertmib executable to server
+  copy: src=snmpttconvertmib dest=/usr/sbin/snmpttconvertmib owner=root group=root mode=755
+
+- name: Create snmptt spool directory
+  file: path=/var/spool/snmptt state=directory owner=snmptt group=snmptt mode=755
+
+- name: Create snmptt log directory
+  file: path=/var/log/snmptt/ state=directory owner=snmptt group=snmptt mode=755
+
+- name: copy snmptt-init.d executable to server init.d
+  copy: src=snmptt-init.d dest=/etc/init.d/snmptt owner=root group=root mode=755
+
