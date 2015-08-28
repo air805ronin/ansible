@@ -4,8 +4,13 @@
   yum: name="@Development tools" state=present
 
 - name: install the latest version of Fail2Ban
-  yum: name=fail2ban state=latest
+  yum: name=fail2ban state=present
 
+<<<<<<< HEAD
 - name: install lynx - command line web browser
   yum: name=lynx state=present
+=======
+- name: install the latest version of CMake
+  yum: name=cmake state=present
+>>>>>>> 51aac082386cccd09aeb0376d276491504218607
 
