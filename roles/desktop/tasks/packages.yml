@@ -4,13 +4,19 @@
   yum: name="@Development tools" state=present
 
 - name: install the latest version of Fail2Ban
-  yum: name=fail2ban state=present
+  yum: name=fail2ban state=latest
 
-<<<<<<< HEAD
 - name: install lynx - command line web browser
   yum: name=lynx state=present
-=======
-- name: install the latest version of CMake
-  yum: name=cmake state=present
->>>>>>> 51aac082386cccd09aeb0376d276491504218607
 
+- name: ensure latest version of VIM
+  yum: name=vim state=latest
+
+- name: copy accress personalized vim config
+  copy: src=vimrc dest=/home/bmckenna/.vimrc owner=bmckenna mode=664
+
+- name: copy accress personalized vim config
+  copy: src=vimrc dest=/root/.vimrc owner=root mode=644
+
+- name: install mlocate package - locate and updatedb
+  yum: name=mlocate state=present
