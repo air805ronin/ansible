@@ -1,6 +1,12 @@
 ---
 - name: Ensure latest NTP is installed
   yum: pkg=ntp state=latest
+  when: ansible_os_family == "Red Hat"
+
+- name: Ensure latest NTP is installed
+  apt: pkg=ntp state=latest
+  when: ansible_os_family == "Debian"
+
 - name: write NTP config file
   template: src=ntp.j2 dest=/etc/ntp.conf
   notify:

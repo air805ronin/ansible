@@ -1,0 +1,22 @@
+---
+
+- name: install the 'Development tools' package group
+  apt: name="@Development tools" state=present
+
+- name: install the latest version of Fail2Ban
+  apt: name=fail2ban state=latest
+
+- name: install lynx - command line web browser
+  apt: name=lynx state=present
+
+- name: ensure latest version of VIM
+  apt: name=vim state=latest
+
+- name: copy accress personalized vim config
+  copy: src=vimrc dest=/home/bmckenna/.vimrc owner=bmckenna mode=664
+
+- name: copy accress personalized vim config
+  copy: src=vimrc dest=/root/.vimrc owner=root mode=644
+
+- name: install mlocate package - locate and updatedb
+  apt: name=mlocate state=present

@@ -1,0 +1,10 @@
+---
+
+- name: install snmpd 
+  apt: name=snmpd state=present
+
+- name: install Config::Ini perl module
+  apt: name=perl-Config-IniFiles state=present
+
+- name: install sys::syslog perl module
+  apt: name=perl-Sys-Syslog state=present

@@ -1,4 +1,7 @@
 ---
- - include: packages.yml
+ - include: rh_packages.yml
+   when: ansible_os_family == "Red Hat"
+ - include: deb_packages.yml
+   when: ansible_os_family == "Debian"
  - include: accounts.yml
  - include: snmptt.yml

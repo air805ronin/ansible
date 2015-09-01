@@ -1,9 +1,19 @@
 ---
 - name: Install packages for Maria db
   yum: name=mariadb-server state=latest update_cache=yes
+  when: ansible_os_family == "Red Hat"
 
 - name: Install python module
   yum: name=python-mysqldb state=installed
+  when: ansible_os_family == "Red Hat"
+
+- name: Install packages for Maria db
+  apt: name=mariadb-server state=latest update_cache=yes
+  when: ansible_os_family == "Debian"
+
+- name: Install python module
+  apt: name=python-mysqldb state=installed
+  when: ansible_os_family == "Debian"
 
 - name: delete anonymous MySQL server user for {{ ansible_hostname }}
   action: mysql_user user="" host="{{ ansible_hostname }}" state="absent"

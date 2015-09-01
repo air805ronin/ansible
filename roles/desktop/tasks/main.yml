@@ -1,2 +1,6 @@
 ---
- - include: packages.yml
+ - include: deb_packages.yml
+   when: ansible_os_family == "Debian"
+
+ - include: rh_packages.yml
+   when: ansible_os_family == "Red Hat"
