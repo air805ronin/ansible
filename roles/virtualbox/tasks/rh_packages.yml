@@ -1,0 +1,18 @@
+---
+- name: add virtual box repository
+  copy: src=virtualbox.repo dest=/etc/yum.repos.d/
+
+- name: install virtualbox packages
+  yum: pkg=VirtualBox-4.3 state=present
+
+- name: install kernel headers to adapt kernel
+  yum: pkg={{ item }} state=present
+  with_items:
+  - kernel-devel
+  - kernel-headers
+
+- name: rebuild kernel to adapt to virtual box
+  command: /etc/init.d/vboxdrv setup
+
+- name: add bmckenna user to vboxusers group
+  command: usermod -a -G vboxusers bmckenna
