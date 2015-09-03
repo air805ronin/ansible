@@ -23,3 +23,6 @@
 
 - name: install screen
   yum: name=screen state=present
+
+- name: copy cmatrix screensaver to bmckenna home
+  copy: src=cmatrix dest=/home/bmckenna/cmatrix owner=bmckenna mode=755

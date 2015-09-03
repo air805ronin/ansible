@@ -1,7 +1,20 @@
 ---
 
-- name: install the 'Development tools' package group
-  apt: name="@Development tools" state=present
+- name: install the debian equivalent to Development Tools...kind of
+  apt: name={{ item }} state=present
+  with_items:
+  - build-essentials
+  - autoconf
+  - automake
+  - libtool
+  - patch
+  - chrpath
+  - cmake
+  - git
+  - cvs
+  - colordiff
+  - gcc-objc
+  - gcc-objc++
 
 - name: install the latest version of Fail2Ban
   apt: name=fail2ban state=latest
