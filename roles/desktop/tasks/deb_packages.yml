@@ -20,3 +20,6 @@
 
 - name: install mlocate package - locate and updatedb
   apt: name=mlocate state=present
+
+- name: install screen package
+  apt: name=screen state=present

@@ -12,11 +12,14 @@
 - name: ensure latest version of VIM
   yum: name=vim state=latest
 
-- name: copy accress personalized vim config
+- name: copy accross personalized vim config
   copy: src=vimrc dest=/home/bmckenna/.vimrc owner=bmckenna mode=664
 
-- name: copy accress personalized vim config
+- name: copy accross personalized vim config
   copy: src=vimrc dest=/root/.vimrc owner=root mode=644
 
 - name: install mlocate package - locate and updatedb
   yum: name=mlocate state=present
+
+- name: install screen
+  yum: name=screen state=present
