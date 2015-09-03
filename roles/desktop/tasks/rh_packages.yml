@@ -5,6 +5,8 @@
 
 - name: install Gnome 3 Desktop
   command: yum -y groupinstall "Gnome desktop"
+  when: ansible_distribution == "CentOS" 
+
 - name: install the latest version of Fail2Ban
   yum: name=fail2ban state=latest
 
