@@ -2,6 +2,8 @@
 - name: Install packages for Maria db
   yum: name=mariadb-server state=latest update_cache=yes
   when: ansible_os_family == "RedHat"
+  notify:
+  - restart mariadb
 
 - name: Install python module
   yum: name=python-mysqldb state=installed

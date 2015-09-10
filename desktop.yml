@@ -1,10 +1,10 @@
 ---
 - hosts: desktop
   connection: local
+  vars:
+    mysql_root_password: GO##chelsea
   roles:
-     - common
-     - desktop
-     - virtualbox
+     - lamp 
   tasks:
 
 #     - mail:
