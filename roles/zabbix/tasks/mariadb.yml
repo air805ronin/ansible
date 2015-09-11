@@ -1,0 +1,26 @@
+---
+
+- name: add zabbix database
+  mysql_db: db=zabbix state=present
+
+- name: create zabbix sql user
+  mysql_user: user="zabbix" state="present"
+
+- name: change zabbix user password and permissions for localhost
+  mysql_user: name=zabbix
+              password=password
+              priv=zabbix.*:ALL,GRANT
+              host=localhost
+
+- name: change zabbix user password and permissions for '%'
+  mysql_user: name=zabbix
+              password=password
+              priv=zabbix.*:ALL,GRANT
+              host='%'
+
+- mail:
+    host='localhost'
+    port=25
+    to="Benjamin McKenna <benjamin.mckenna@yahoo.com>"
+    subject='Run Import Scripts for new Zabbix Host'
+    body='System {{ ansible_hostname }} has been successfully provisioned zabbix. You need to import schema.sql, images.sql, and data.sql located at /usr/share/doc/zabbix-server-mysql-*/create'

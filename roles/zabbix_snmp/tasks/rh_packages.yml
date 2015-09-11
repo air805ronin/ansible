@@ -1,0 +1,14 @@
+---
+
+- name: install epel repo
+  yum: name=epel-release state=present
+
+- name: install net-snmp 
+  yum: name=net-snmp state=present
+
+- name: install net-snmp-utils
+  yum: name=net-snmp-utils state=present
+
+- name: install net-snmp-libs
+  yum: name=net-snmp-libs state=present
+

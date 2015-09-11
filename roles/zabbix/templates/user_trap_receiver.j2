@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+$zserver='127.0.0.1';
+$tserver='Zabbix server';
+$trapkey='allsnmptrap';
+$zsender='zabbix_sender';
+ 
+ $hostname = <STDIN>;
+ chomp($hostname);
+ $ipaddress = <STDIN>;
+ chomp($ipaddress);
+ $output="Trap received from Host: $hostname ($ipaddress)\n";
+ while(<STDIN>) {
+ $output.=$_;
+ }
+ system ( "$zsender  -z \"$zserver\" -s \"$tserver\"  -k \"$trapkey\" -o \'$output\' ");

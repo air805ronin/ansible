@@ -1,0 +1,7 @@
+---
+
+- name: Add group snmptt
+  group: name=snmptt gid=666 state=present
+
+- name: Add account for snmptt
+  user: name=snmptt state=present uid=10666 group=snmptt
