@@ -30,3 +30,6 @@
 
 - name: copy cmatrix screensaver to bmckenna home
   copy: src=cmatrix dest=/home/bmckenna/cmatrix owner=bmckenna mode=755
+
+- name: install clusterssh
+  yum: name=clusterssh state=present 
